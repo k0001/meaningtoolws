@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+"""
+Meaningtool Semantic Map REST API v0.1 client
+
+Official documentation for the REST API v0.1 can be found at
+http://meaningtool.com/docs/ws/rest/v0.1
+"""
+
 import re
 import urllib
 import urllib2
@@ -36,6 +44,9 @@ class Client(object):
     def __init__(self, sm_key):
         self.sm_key = sm_key
         self._base_url = u"%s/%s" % (MT_BASE_URL, sm_key)
+
+    def __repr__(self):
+        return u"<%s - sm_key: %s>" % (self.__class__.__name__, self.sm_key)
 
     def _req_base(self, method, url, data, headers):
         if method == "GET":
