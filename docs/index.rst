@@ -3,13 +3,20 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Meaningtool Web Services Python Client's documentation!
-==================================================================
+Meaningtool Web Services Python Clients Documentation
+=====================================================
 
-Contents:
+The ``meaningtoolws`` Python library is a collection of clients for the
+different Meaningtool Web Services publicly exposed.
+
+This package is officially maintained by the Meaningtool developers.
+
+Supported Web Services:
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 1
+
+    sm
 
 Indices and tables
 ==================
