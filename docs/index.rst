@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Meaningtool Web Services Python Clients Documentation
+Meaningtool Web Services Python Client Documentation
 =====================================================
 
 The ``meaningtoolws`` Python library is a collection of clients for the

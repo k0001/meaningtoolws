@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Meaningtool Web Services Python Clients documentation build configuration file, created by
+# Meaningtool Web Services Python Client documentation build configuration file, created by
 # sphinx-quickstart on Tue Jun  2 16:47:49 2009.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -37,7 +37,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Meaningtool Web Services Python Clients'
+project = u'Meaningtool Web Services Python Client'
 copyright = u'2009, Renzo Carbonara'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -158,7 +158,7 @@ html_static_path = ['_static']
 #html_file_suffix = ''
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'MeaningtoolWebServicesPythonClientsdoc'
+htmlhelp_basename = 'MeaningtoolWebServicesPythonClientdoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -172,7 +172,7 @@ htmlhelp_basename = 'MeaningtoolWebServicesPythonClientsdoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'MeaningtoolWebServicesPythonClients.tex', u'Meaningtool Web Services Python Clients Documentation',
+  ('index', 'MeaningtoolWebServicesPythonClient.tex', u'Meaningtool Web Services Python Client Documentation',
    u'Renzo Carbonara', 'manual'),
 ]
 
