@@ -1,4 +1,12 @@
 # -*- coding: utf-8 -*-
+
+# Copyright (c) 2009, Popego Corporation <contact [at] popego [dot] com>
+# All rights reserved.
+#
+# This file is part of the Meaningtool Web Services Python Client project
+#
+# See the COPYING file distributed with this project for its licensing terms.
+
 """
 Meaningtool Semantic Map REST API v0.1 client
 
