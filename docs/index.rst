@@ -17,6 +17,8 @@ Supported Web Services:
     :maxdepth: 1
 
     sm
+    licensing
+
 
 Indices and tables
 ==================
@@ -24,4 +26,5 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
 
