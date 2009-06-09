@@ -38,7 +38,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Meaningtool Web Services Python Client'
-copyright = u'2009, Renzo Carbonara'
+copyright = u'2009, Popego Corporation'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -173,7 +173,7 @@ htmlhelp_basename = 'MeaningtoolWebServicesPythonClientdoc'
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'MeaningtoolWebServicesPythonClient.tex', u'Meaningtool Web Services Python Client Documentation',
-   u'Renzo Carbonara', 'manual'),
+   u'Popego Corporation', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
