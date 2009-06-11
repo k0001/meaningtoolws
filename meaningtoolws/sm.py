@@ -24,7 +24,8 @@ except ImportError:
     import simplejson as json
 
 
-MT_BASE_URL = u"http://ws.meaningtool.com/rest/v0.1"
+MT_BASE_URL = u"http://ws.meaningtool.com/sm/restv0.1"
+
 _re_url = re.compile(ur"^https?://.+$")
 
 
@@ -63,8 +64,8 @@ class Client(object):
             req = urllib2.Request(url, urllib.urlencode(data))
         else:
             raise ValueError(u"HTTP Method '%s' not supported" % method)
-        req.add_header("Content-Type", "application/x-www-form-urlencoded")
-        req.add_header("Accept-Charset", "utf-8")
+        req.add_header("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8")
+        req.add_header("Accept-Charset", "UTF-8")
         for k,v in headers:
             req.add_header(k, v)
         try:
@@ -72,9 +73,12 @@ class Client(object):
         except urllib2.HTTPError, e:
             if e.code >= 500:
                 raise
-            return resp.read()
+            resp = e
+        s = resp.read()
+        return s
 
     def _req_json(self, method, url, data, headers):
+        url += u'.json'
         headers.append(("Accept", "application/json"))
         return self._req_base(method, url, data, headers)
 
@@ -100,10 +104,7 @@ class Client(object):
         data = {}
         headers = []
 
-        if not source in (u"text", u"url"):
-            raise ValueError(u"source")
         data["source"] = source.encode("utf8")
-
         data["input"] = input.encode("utf8")
 
         if url_hint:
@@ -112,9 +113,6 @@ class Client(object):
             data["url_hint"] = url_hint.encode("utf8")
 
         if additionals:
-            for i in additionals:
-                if not i in (u"top-terms", u"classifiers", u"classifiers-top-terms"):
-                    raise ValueError(u"additionals")
             additionals = u",".join(set(additionals))
             data["additionals"] = additionals.encode("utf8")
 
@@ -132,10 +130,7 @@ class Client(object):
         data = {}
         headers = []
 
-        if not source in (u"text", u"url"):
-            raise ValueError(u"source")
         data["source"] = source.encode("utf8")
-
         data["input"] = input.encode("utf8")
 
         if url_hint:
