@@ -16,7 +16,7 @@ Supported Web Services:
 .. toctree::
     :maxdepth: 1
 
-    sm
+    ct
     licensing
 
 

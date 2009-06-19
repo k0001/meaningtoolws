@@ -1,38 +1,38 @@
-.. api_reference_toplevel:
+.. ct_restv_api_reference:
 
-Semantic Map REST API v0.1
-==========================
+Category Tree REST API v0.1
+===========================
 
-.. automodule:: meaningtoolws.sm
+.. automodule:: meaningtoolws.ct
 
 
 Client
 ------
 
-.. autoclass:: meaningtoolws.sm.Client()
+.. autoclass:: meaningtoolws.ct.Client()
     :members:
     :show-inheritance:
 
-    Meaningtool Semantic Map REST API v0.1 Client
+    Meaningtool Category Tree REST API v0.1 Client
 
 
-    .. attribute:: sm_key
+    .. attribute:: ct_key
 
-         *Meaningtool Semantic Map Key* identifying the *Meaningtool Semantic
-         Map* associated with the requests made from this ``Client``.
+         *Meaningtool Category Tree Key* identifying the *Meaningtool Category
+         Tree* associated with the requests made from this ``Client``.
 
 
-    .. automethod:: meaningtoolws.sm.Client.__init__
+    .. automethod:: meaningtoolws.ct.Client.__init__
 
         :Parameters:
 
-            sm_key
-                *Meaningtool Semantic Map Key* identifying the *Meaningtool
-                Semantic Map* associated with the requests made from this
+            ct_key
+                *Meaningtool Category Tree Key* identifying the *Meaningtool
+                Category Tree* associated with the requests made from this
                 ``Client``.
 
 
-    .. automethod:: meaningtoolws.sm.Client.get_categories
+    .. automethod:: meaningtoolws.ct.Client.get_categories
 
         Wrapper around the Categorizing_ REST API method.
 
@@ -68,7 +68,7 @@ Client
                     where relevant to the categorization.
 
                 ``'classifiers'``
-                    Include a list of the classifiers in the Semantic Map that
+                    Include a list of the classifiers in the Category Tree that
                     were involved in this categorization together with its
                     overall score in the categorization.
 
@@ -90,7 +90,7 @@ Client
             A ``Result`` when Meaningtool Result status is ``'ok'``.
 
 
-    .. automethod:: meaningtoolws.sm.Client.get_tags
+    .. automethod:: meaningtoolws.ct.Client.get_tags
 
         Wrapper around the Tagging_ REST API method.
 
@@ -137,13 +137,13 @@ Client
 Results
 -------
 
-.. autoclass:: meaningtoolws.sm.Result()
+.. autoclass:: meaningtoolws.ct.Result()
     :members:
     :show-inheritance:
 
     Wrapper around a `Meaningtool Result`_.
 
-    .. attribute:: meaningtoolws.sm.Result.status_errno
+    .. attribute:: meaningtoolws.ct.Result.status_errno
 
         A number (``int``) uniquely identifying an error scenario. When this number is
         different than ``0`` something wrong has happened, otherwise everything
@@ -151,17 +151,17 @@ Results
 
         You can lookup what does this error number mean later in the `Errors Reference`_.
 
-    .. attribute:: meaningtoolws.sm.Result.status_message
+    .. attribute:: meaningtoolws.ct.Result.status_message
 
         Detailed and human-readable message (``unicode``) about what just happened (E.g,
-        ``'wrong sm_key'`` or ``'successfully categorized'``).
+        ``'wrong ct_key'`` or ``'successfully categorized'``).
 
-    .. attribute:: meaningtoolws.sm.Result.data
+    .. attribute:: meaningtoolws.ct.Result.data
 
         The actual requested resource (``dict``).
 
 
-.. autoclass:: meaningtoolws.sm.ResultError()
+.. autoclass:: meaningtoolws.ct.ResultError()
     :members:
     :show-inheritance:
 
