@@ -30,9 +30,9 @@ _re_url = re.compile(ur"^https?://.+$")
 
 
 class Result(object):
-    def __init__(self, status_errno, status_message, data):
+    def __init__(self, status_errcode, status_message, data):
         super(Result, self).__init__()
-        self.status_errno = status_errno
+        self.status_errcode = status_errno
         self.status_message = status_message
         self.data = data
 
@@ -41,12 +41,12 @@ class Result(object):
 
 
 class ResultError(Result, Exception):
-    def __init__(self, status_errno, status_message, data):
-        Result.__init__(self, status_errno, status_message, data)
-        Exception.__init__(self, u"%d: %s" % (status_errno, status_message))
+    def __init__(self, status_errcode, status_message, data):
+        Result.__init__(self, status_errcode, status_message, data)
+        Exception.__init__(self, u"%s: %s" % (status_errcode, status_message))
 
     def __repr__(self):
-        return u"<%s - %d: %s>" % (self.__class__.__name__, self.status_errno, self.status_message)
+        return u"<%s - %s: %s>" % (self.__class__.__name__, self.status_errcode, self.status_message)
 
 
 class Client(object):
@@ -84,13 +84,13 @@ class Client(object):
 
     def _parse_result_base(self, result_dict):
         status = result_dict["status"]
-        status_errno = result_dict["errno"]
+        status_errcode = result_dict["errno"]
         status_message = result_dict["message"]
         data = result_dict["data"]
         if status == "ok":
-            return Result(status_errno, status_message, data)
+            return Result(status_errcode, status_message, data)
         else:
-            raise ResultError(status_errno, status_message, data)
+            raise ResultError(status_errcode, status_message, data)
 
     def _parse_result_json(self, raw):
         return self._parse_result_base(json.loads(raw, encoding="utf8"))
